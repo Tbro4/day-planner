@@ -15,7 +15,10 @@ console.log(dayHour);
 
 saveBtn.on("click", function (event) {
   event.preventDefault();
+  var input = $(this).siblings().eq(1).val();
+  localStorage.setItem("memo", input);
+  console.log($(this).siblings().eq(1).val());
 
-  var memo = $(".memo").val();
-  console.log(memo);
+  //   var memo = $(".memo").val();
+  //   console.log(memo);
 });
