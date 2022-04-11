@@ -2,6 +2,8 @@
 
 ## This is a day planner application that allows the user to enter data into textareas for each hour of the work day (9AM- 5PM)
 
+[TRY IT HERE](https://tbro4.github.io/day-planner/)
+
 The day's date is printed at the top
 
 Each field has a save button next to it to save the input text to local storage
