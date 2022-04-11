@@ -1,3 +1,13 @@
+$("#9").val(localStorage.getItem("9"));
+$("#10").val(localStorage.getItem("10"));
+$("#11").val(localStorage.getItem("11"));
+$("#12").val(localStorage.getItem("12"));
+$("#1").val(localStorage.getItem("1"));
+$("#2").val(localStorage.getItem("2"));
+$("#3").val(localStorage.getItem("3"));
+$("#4").val(localStorage.getItem("4"));
+$("#5").val(localStorage.getItem("5"));
+
 var today = moment();
 var container = $(".container");
 var saveBtn = $(".saveBtn");
@@ -5,7 +15,9 @@ var saveBtn = $(".saveBtn");
 $("#currentDay").append($("<h2>").text(today.format("MMM Do, YYYY")));
 //logs hour of the day (1-24)
 var dayHour = parseInt(today.format("H"));
-console.log(dayHour);
+
+//an array to hold input values for each hour
+var textFieldInputs = ["9", "10", "11", "12", "1", "2", "3", "4", "5"];
 
 //function to change background color
 function qSelector() {
@@ -30,15 +42,11 @@ function qSelector() {
 }
 qSelector();
 
-//we want to append a row for each hour 9am-5pm with the hour(title), memo form(form), and save button(button)
-
-//make an array of hours, loop through the array to append everything?
-
 saveBtn.on("click", function (event) {
-  event.preventDefault();
+  // event.preventDefault();
   //this is the button element
-  console.log($(this));
+  var key = $(this).attr("id");
   var input = $(this).siblings().eq(1).val();
-  localStorage.setItem("memo", input);
+  localStorage.setItem(key, input);
   console.log($(this).siblings().eq(1).val());
 });
